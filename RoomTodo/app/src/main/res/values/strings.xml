@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RoomTodo</string>
+    <string name="add_task">Add</string>
+    <string name="hint_word">Tarefa...</string>
+    <string name="button_save">Salvar</string>
+    <string name="empty_not_saved">Tarefa não pode ser salva porque o campo está vazio</string>
 </resources>
