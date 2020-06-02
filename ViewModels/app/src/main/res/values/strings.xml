@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">View Models</string>
+    <string name="team_a">Team A</string>
+    <string name="points_team_a">0</string>
+    <string name="three_points">+3 Points</string>
+    <string name="two_points">+2 Points</string>
+    <string name="one_point">Free throw</string>
+    <string name="team_b">Team B</string>
+    <string name="points_team_b">0</string>
+    <string name="reset">Reset</string>
 </resources>
