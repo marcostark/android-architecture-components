@@ -1,55 +1,60 @@
 package dev.marcosouza.viewmodels
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+
 
 class MainActivity : AppCompatActivity() {
 
-    var scoreTeamA = 0
-    var scoreTeamB = 0
+    private lateinit var viewModel: ScoreViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        viewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
+        displayForTeamA(viewModel.scoreTeamA)
+        displayForTeamB(viewModel.scoreTeamB)
     }
 
     fun onePointForTeamA(v: View?) {
-        scoreTeamA += 1
-        displayForTeamA(scoreTeamA)
+        viewModel.scoreTeamA += 1
+        displayForTeamA(viewModel.scoreTeamA)
     }
 
     fun twoPointsForTeamA(v: View?) {
-        scoreTeamA += 2
-        displayForTeamA(scoreTeamA)
+        viewModel.scoreTeamA += 2
+        displayForTeamA(viewModel.scoreTeamA)
     }
 
     fun threePointsForTeamA(view: View?) {
-        scoreTeamA += 3
-        displayForTeamA(scoreTeamA)
+        viewModel.scoreTeamA += 3
+        displayForTeamA(viewModel.scoreTeamA)
     }
 
     fun onePointForTeamB(v: View?) {
-        scoreTeamB += 1
-        displayForTeamB(scoreTeamB)
+        viewModel.scoreTeamB += 1
+        displayForTeamB(viewModel.scoreTeamB)
     }
 
     fun twoPointsForTeamB(v: View?) {
-        scoreTeamB += 2
-        displayForTeamB(scoreTeamB)
+        viewModel.scoreTeamB += 2
+        displayForTeamB(viewModel.scoreTeamB)
     }
 
     fun threePointsForTeamB(v: View?) {
-        scoreTeamB += 3
-        displayForTeamB(scoreTeamB)
+        viewModel.scoreTeamB += 3
+        displayForTeamB(viewModel.scoreTeamB)
     }
 
     fun resetScore(v: View?) {
-        scoreTeamA = 0
-        scoreTeamB = 0
-        displayForTeamA(scoreTeamA)
-        displayForTeamB(scoreTeamB)
+        viewModel.scoreTeamA = 0
+        viewModel.scoreTeamB = 0
+        displayForTeamA(viewModel.scoreTeamA)
+        displayForTeamB(viewModel.scoreTeamB)
     }
 
     private fun displayForTeamA(score: Int) {
